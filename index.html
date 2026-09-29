@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Salsas SOFRE | Colección Artesanal de Salsas & Recetas</title>
+  <meta name="description" content="Salsas SOFRE - Una salsa para explorar sabores del mundo. Colección de salsas artesanales elaboradas en Jalisco con 4 chiles seleccionados sin conservadores artificiales.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Header / Nav -->
+  <header class="header">
+    <div class="container nav-container">
+      <a href="#" class="logo-brand">
+        <div class="logo-icon">!</div>
+        <div class="logo-text-wrap">
+          <span class="logo-title">SOFRE</span>
+          <span class="logo-subtitle">SALSAS ARTESANALES</span>
+        </div>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#hero" class="nav-link">Inicio</a></li>
+        <li><a href="#selector-salsas" class="nav-link">Salsas (Desplegable)</a></li>
+        <li><a href="#recetas-acordeon" class="nav-link">5 Recetas</a></li>
+        <li><a href="#github-sites" class="nav-link">GitHub & Google Sites</a></li>
+      </ul>
+      <a href="#selector-salsas" class="btn-primary">🌶️ Explorar Salsas</a>
+    </div>
+  </header>
+
+  <!-- Hero Section with Collection Image -->
+  <section id="hero" class="hero">
+    <div class="container hero-grid">
+      <div class="hero-text">
+        <span class="badge-tag">🇲🇽 Hecho en Tepatitlán, Jalisco</span>
+        <h1 class="hero-title">Un toque para cada <span class="text-gradient">cocina del mundo</span></h1>
+        
+        <p class="hero-description">
+          Descubre nuestra exclusiva línea de <strong>Salsas Artesanales SOFRE</strong>. Creadas con chiles secos seleccionados (Árbol, Guajillo, Morita, Chipotle y Habanero), sin conservadores artificiales y formuladas para realzar cada platillo gourmet.
+        </p>
+
+        <div style="display: flex; gap: 15px; flex-wrap: wrap;">
+          <a href="#selector-salsas" class="btn-primary">🔥 Probar Selector de Salsas</a>
+          <a href="#recetas-acordeon" class="btn-primary" style="background: linear-gradient(135deg, #FFB703, #FF4500);">👨‍🍳 Ver 5 Recetas Paso a Paso</a>
+        </div>
+      </div>
+
+      <!-- Main Collection Image (Varios Envases Juntos) -->
+      <div class="collection-hero-img-wrap">
+        <img src="assets/images/sofre_salsas_collection.png" alt="Colección de envases de Salsa SOFRE" class="collection-hero-img">
+      </div>
+    </div>
+  </section>
+
+  <!-- Section: Interactive Sauces Dropdown Selector -->
+  <section id="selector-salsas" class="section" style="background: rgba(0,0,0,0.2);">
+    <div class="container">
+      <div style="text-align: center; max-width: 650px; margin: 0 auto 30px;">
+        <span class="badge-tag">Menú Interactivo</span>
+        <h2 style="font-family: var(--font-heading); font-size: 2.6rem; margin: 10px 0;">Información de Nuestras Salsas</h2>
+        <p style="color: var(--text-sub);">Selecciona una salsa del menú desplegable para desplegar toda su ficha técnica, ingredientes y perfil gastronómico.</p>
+      </div>
+
+      <div class="sauce-selector-box">
+        <div class="select-control-wrap">
+          <label for="sauceDropdown" class="select-label">👇 Elige una Salsa SOFRE:</label>
+          <select id="sauceDropdown" class="custom-select">
+            <option value="mixtos">🔥 SOFRE Salsa de Chiles Mixtos (4 Chiles: Árbol, Guajillo, Morita, Chipotle)</option>
+            <option value="habanero_mango">🥭 SOFRE Habanero & Mango Fuego (Picor Intenso Agridulce)</option>
+            <option value="macha">🥜 SOFRE Macha Pepita & Arándano (Chiles Tostados en Aceite)</option>
+            <option value="chipotle_bbq">💨 SOFRE Chipotle Ahumado BBQ (Sabor Amaderado Gourmet)</option>
+            <option value="habanero_negro">🖤 SOFRE Habanero Negro Ahumado (Cenizas de Habanero & Especias)</option>
+          </select>
+        </div>
+
+        <!-- Dynamic Sauce Info Display Card -->
+        <div class="sauce-info-display" id="sauceInfoDisplay" style="transition: opacity 0.3s ease;">
+          <div>
+            <img src="assets/images/sofre_chiles_mixtos.png" alt="Envase Salsa SOFRE" class="sauce-display-img">
+            
+            <div class="meters-panel">
+              <div class="meter-line">
+                <span>🔥 PICOR:</span>
+                <div class="meter-dots" id="sauceFireDots">
+                  <div class="dot active-fire"></div>
+                  <div class="dot active-fire"></div>
+                  <div class="dot active-fire"></div>
+                  <div class="dot active-fire"></div>
+                  <div class="dot"></div>
+                </div>
+              </div>
+              <div class="meter-line">
+                <span>🍯 DULZURA:</span>
+                <div class="meter-dots" id="sauceSweetDots">
+                  <div class="dot active-sweet"></div>
+                  <div class="dot active-sweet"></div>
+                  <div class="dot"></div>
+                  <div class="dot"></div>
+                  <div class="dot"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <span class="badge-tag" id="sauceVol">CONT. NET. 280ML</span>
+            <h3 id="sauceTitle" style="font-size: 1.8rem; font-weight: 800; margin: 10px 0 5px;">SOFRE Salsa de Chiles Mixtos</h3>
+            <p id="sauceTagline" style="color: var(--accent-amber); font-weight: 600; font-size: 1.05rem; margin-bottom: 15px;">Un toque para cada cocina del mundo</p>
+
+            <div style="background: rgba(255,255,255,0.03); padding: 15px; border-radius: 12px; margin-bottom: 15px;">
+              <h4 style="color: var(--accent-red); font-size: 0.9rem; margin-bottom: 4px;">🌶️ Chiles Utilizados:</h4>
+              <p id="sauceChiles" style="font-size: 0.95rem; color: var(--text-bright);">Chile de árbol, guajillo, morita y chipotle</p>
+            </div>
+
+            <div style="margin-bottom: 15px;">
+              <h4 style="color: var(--text-muted); font-size: 0.85rem; margin-bottom: 4px;">INGREDIENTES NATURALES:</h4>
+              <p id="sauceIng" style="font-size: 0.9rem; color: var(--text-sub);">Chile de árbol, guajillo, chile morita, chipotle, ajo, sal, agua, especias finas.</p>
+            </div>
+
+            <div>
+              <h4 style="color: var(--accent-teal); font-size: 0.85rem; margin-bottom: 4px;">💡 MARIDAJE RECOMENDADO:</h4>
+              <p id="saucePairing" style="font-size: 0.9rem; color: var(--text-sub);">Cortes de carne, pollo asado, tacos de pastor, huevos al gusto y pastas.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section: 5 Accordion Recipes paso a paso -->
+  <section id="recetas-acordeon" class="section">
+    <div class="container">
+      <div style="text-align: center; max-width: 650px; margin: 0 auto 40px;">
+        <span class="badge-tag">Recetario SOFRE</span>
+        <h2 style="font-family: var(--font-heading); font-size: 2.6rem; margin: 10px 0;">5 Recetas con Desplegables Paso a Paso</h2>
+        <p style="color: var(--text-sub);">Haz clic en cualquier receta para desplegar la lista de ingredientes y la preparación guiada.</p>
+      </div>
+
+      <div class="recipe-accordions-list">
+
+        <!-- Accordion 1: Pollo Marinado (Oficial Frasco) -->
+        <div class="accordion-item active">
+          <div class="accordion-header">
+            <div class="accordion-header-left">
+              <div class="accordion-number">1</div>
+              <div>
+                <div class="accordion-title">Pollo Marinado a la SOFRE</div>
+                <div style="font-size: 0.85rem; color: var(--accent-amber);">🌶️ Salsa de Chiles Mixtos (Sugerencia Oficial de Etiqueta)</div>
+              </div>
+            </div>
+            <div class="accordion-icon">▼</div>
+          </div>
+          <div class="accordion-content" style="max-height: 1000px;">
+            <div class="accordion-inner">
+              <div>
+                <img src="assets/images/sofre_pollo_marinado.png" alt="Pollo Marinado a la SOFRE" class="recipe-accordion-img">
+                <div style="margin-top: 12px; font-size: 0.85rem; color: var(--text-muted);">⏱️ Tiempo: 35 min | 🍽️ 4 porciones</div>
+              </div>
+              <div>
+                <h4 style="color: var(--accent-red); margin-bottom: 8px;">🛒 Ingredientes Necesarios:</h4>
+                <ul class="ingredients-checklist">
+                  <li><input type="checkbox" checked> 1 kg de pechuga de pollo cortada en filetes</li>
+                  <li><input type="checkbox" checked> 4 cdas soperas de Salsa SOFRE de Chiles Mixtos</li>
+                  <li><input type="checkbox" checked> 2 dientes de ajo picados finamente</li>
+                  <li><input type="checkbox" checked> 1 cda de aceite de oliva</li>
+                  <li><input type="checkbox" checked> Jugo de 1 limón fresco</li>
+                  <li><input type="checkbox" checked> Sal marina y pimienta al gusto</li>
+                </ul>
+
+                <h4 style="color: var(--accent-red); margin-top: 20px; margin-bottom: 8px;">👨‍🍳 Preparación Paso a Paso:</h4>
+                <ol class="recipe-steps-list">
+                  <li>En un recipiente hondo, integra la Salsa SOFRE de Chiles Mixtos con el aceite de oliva, el ajo picado y el jugo de limón.</li>
+                  <li>Sazona los filetes de pollo con sal y pimienta al gusto.</li>
+                  <li>Cubre todo el pollo con la mezcla marina SOFRE y deja reposar en refrigeración por 20 minutos.</li>
+                  <li>Calienta una parrillera o sartén a fuego medio-alto y cocina cada filete de 6 a 8 minutos por lado hasta obtener un dorado jugoso.</li>
+                  <li>Sirve con una cucharada fresca adicional de Salsa SOFRE sobre la pechuga caliente.</li>
+                </ol>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Accordion 2: Tacos de Ribeye -->
+        <div class="accordion-item">
+          <div class="accordion-header">
+            <div class="accordion-header-left">
+              <div class="accordion-number">2</div>
+              <div>
+                <div class="accordion-title">Tacos de Ribeye & Aguacate con Salsa Macha</div>
+                <div style="font-size: 0.85rem; color: var(--accent-amber);">🥜 Salsa Macha Pepita & Arándano</div>
+              </div>
+            </div>
+            <div class="accordion-icon">▼</div>
+          </div>
+          <div class="accordion-content">
+            <div class="accordion-inner">
+              <div>
+                <img src="assets/images/sofre_chiles_mixtos.png" alt="Tacos Ribeye" class="recipe-accordion-img">
+                <div style="margin-top: 12px; font-size: 0.85rem; color: var(--text-muted);">⏱️ Tiempo: 20 min | 🍽️ 3 porciones</div>
+              </div>
+              <div>
+                <h4 style="color: var(--accent-red); margin-bottom: 8px;">🛒 Ingredientes Necesarios:</h4>
+                <ul class="ingredients-checklist">
+                  <li><input type="checkbox"> 500g de Ribeye cortado en cubos pequeños</li>
+                  <li><input type="checkbox"> 3 cdas de Salsa Macha SOFRE Pepita & Arándano</li>
+                  <li><input type="checkbox"> Tortillas de maíz calientitas</li>
+                  <li><input type="checkbox"> 1 aguacate en láminas</li>
+                  <li><input type="checkbox"> Cilantro y cebolla picada</li>
+                </ul>
+
+                <h4 style="color: var(--accent-red); margin-top: 20px; margin-bottom: 8px;">👨‍🍳 Preparación Paso a Paso:</h4>
+                <ol class="recipe-steps-list">
+                  <li>En una sartén de hierro bien caliente, sella los cubos de Ribeye a fuego muy alto durante 4 minutos para retener jugos.</li>
+                  <li>Espolvorea sal de grano.</li>
+                  <li>Calienta las tortillas de maíz en comal.</li>
+                  <li>Monta la carne sobre las tortillas, agrega láminas de aguacate y corona con abundante Salsa Macha SOFRE crujiente.</li>
+                </ol>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Accordion 3: Camarones Habanero Mango -->
+        <div class="accordion-item">
+          <div class="accordion-header">
+            <div class="accordion-header-left">
+              <div class="accordion-number">3</div>
+              <div>
+                <div class="accordion-title">Camarones Glaseados Habanero & Mango</div>
+                <div style="font-size: 0.85rem; color: var(--accent-amber);">🥭 SOFRE Habanero & Mango Fuego</div>
+              </div>
+            </div>
+            <div class="accordion-icon">▼</div>
+          </div>
+          <div class="accordion-content">
+            <div class="accordion-inner">
+              <div>
+                <img src="assets/images/sofre_chiles_mixtos.png" alt="Camarones Habanero Mango" class="recipe-accordion-img">
+                <div style="margin-top: 12px; font-size: 0.85rem; color: var(--text-muted);">⏱️ Tiempo: 15 min | 🍽️ 2 porciones</div>
+              </div>
+              <div>
+                <h4 style="color: var(--accent-red); margin-bottom: 8px;">🛒 Ingredientes Necesarios:</h4>
+                <ul class="ingredients-checklist">
+                  <li><input type="checkbox"> 400g de camarón grande limpio</li>
+                  <li><input type="checkbox"> 4 cdas de Salsa SOFRE Habanero & Mango</li>
+                  <li><input type="checkbox"> 1 cda de mantequilla</li>
+                  <li><input type="checkbox"> 1 cdita de miel de abeja</li>
+                  <li><input type="checkbox"> Ajonjolí tostado</li>
+                </ul>
+
+                <h4 style="color: var(--accent-red); margin-top: 20px; margin-bottom: 8px;">👨‍🍳 Preparación Paso a Paso:</h4>
+                <ol class="recipe-steps-list">
+                  <li>Saltea los camarones en la mantequilla a fuego medio por 3 minutos.</li>
+                  <li>Vierte la Salsa SOFRE Habanero Mango y la miel de abeja.</li>
+                  <li>Mezcla rápidamente por 1 minuto para que la salsa reduzca y forme un glaseado brillante.</li>
+                  <li>Espolvorea ajonjolí tostado y sirve caliente.</li>
+                </ol>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Accordion 4: Costillas Ahumadas Chipotle -->
+        <div class="accordion-item">
+          <div class="accordion-header">
+            <div class="accordion-header-left">
+              <div class="accordion-number">4</div>
+              <div>
+                <div class="accordion-title">Costillas de Cerdo BBQ Chipotle Ahumado</div>
+                <div style="font-size: 0.85rem; color: var(--accent-amber);">💨 SOFRE Chipotle Ahumado BBQ</div>
+              </div>
+            </div>
+            <div class="accordion-icon">▼</div>
+          </div>
+          <div class="accordion-content">
+            <div class="accordion-inner">
+              <div>
+                <img src="assets/images/sofre_costillas_chipotle.png" alt="Costillas Ahumadas Chipotle" class="recipe-accordion-img">
+                <div style="margin-top: 12px; font-size: 0.85rem; color: var(--text-muted);">⏱️ Tiempo: 50 min | 🍽️ 4 porciones</div>
+              </div>
+              <div>
+                <h4 style="color: var(--accent-red); margin-bottom: 8px;">🛒 Ingredientes Necesarios:</h4>
+                <ul class="ingredients-checklist">
+                  <li><input type="checkbox"> 1.2 kg de costillar de cerdo baby back</li>
+                  <li><input type="checkbox"> 1/2 taza de Salsa SOFRE Chipotle Ahumado BBQ</li>
+                  <li><input type="checkbox"> 2 cdas de azúcar morena o piloncillo rallado</li>
+                  <li><input type="checkbox"> Sal, pimienta y ajo en polvo</li>
+                </ul>
+
+                <h4 style="color: var(--accent-red); margin-top: 20px; margin-bottom: 8px;">👨‍🍳 Preparación Paso a Paso:</h4>
+                <ol class="recipe-steps-list">
+                  <li>Sazona el costillar con sal, pimienta y ajo.</li>
+                  <li>Envuelve en papel aluminio y hornea a 180°C durante 40 minutos.</li>
+                  <li>Retira el aluminio, barniza generosamente con la Salsa SOFRE Chipotle BBQ mezclada con piloncillo.</li>
+                  <li>Hornea destapado a 200°C por 10 minutos adicionales hasta que caramelice.</li>
+                </ol>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Accordion 5: Aguachile Negro -->
+        <div class="accordion-item">
+          <div class="accordion-header">
+            <div class="accordion-header-left">
+              <div class="accordion-number">5</div>
+              <div>
+                <div class="accordion-title">Aguachile Negro de Camarón y Pulpo</div>
+                <div style="font-size: 0.85rem; color: var(--accent-amber);">🖤 SOFRE Habanero Negro Ahumado</div>
+              </div>
+            </div>
+            <div class="accordion-icon">▼</div>
+          </div>
+          <div class="accordion-content">
+            <div class="accordion-inner">
+              <div>
+                <img src="assets/images/sofre_aguachile_negro.png" alt="Aguachile Negro SOFRE" class="recipe-accordion-img">
+                <div style="margin-top: 12px; font-size: 0.85rem; color: var(--text-muted);">⏱️ Tiempo: 25 min | 🍽️ 3 porciones</div>
+              </div>
+              <div>
+                <h4 style="color: var(--accent-red); margin-bottom: 8px;">🛒 Ingredientes Necesarios:</h4>
+                <ul class="ingredients-checklist">
+                  <li><input type="checkbox"> 300g de camarón crudo abierto en mariposa</li>
+                  <li><input type="checkbox"> 150g de tentáculo de pulpo cocido y rebanado</li>
+                  <li><input type="checkbox"> 4 cdas de Salsa SOFRE Habanero Negro Ahumado</li>
+                  <li><input type="checkbox"> Jugo de 6 limones frescos</li>
+                  <li><input type="checkbox"> Pepino en medias lunas y cebolla morada</li>
+                </ul>
+
+                <h4 style="color: var(--accent-red); margin-top: 20px; margin-bottom: 8px;">👨‍🍳 Preparación Paso a Paso:</h4>
+                <ol class="recipe-steps-list">
+                  <li>Curtir el camarón con el jugo de limón y una pizca de sal marina por 10 minutos.</li>
+                  <li>Mezclar la Salsa SOFRE Habanero Negro con el líquido del limón resultante.</li>
+                  <li>Incorporar el pulpo cocido, el pepino y la cebolla morada desflemada.</li>
+                  <li>Servir frío en molcajete acompañado de tostadas de maíz horneadas.</li>
+                </ol>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Section: GitHub Pages & Google Sites Deploy Instructions -->
+  <section id="github-sites" class="section">
+    <div class="container">
+      <div class="github-banner">
+        <span class="badge-tag">🌐 Despliegue en GitHub Pages</span>
+        <h2 style="font-size: 2.2rem; margin: 10px 0;">Guía para Publicar en GitHub y Usar en Google Sites</h2>
+        <p style="color: var(--text-sub); margin-bottom: 20px;">
+          Para publicar esta página web completa en internet gratis y enlazarla con Google Sites, solo sigue estos comandos:
+        </p>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+          <div>
+            <h4 style="color: var(--accent-amber); margin-bottom: 6px;">1. Comandos de Terminal para subir a GitHub:</h4>
+            <div class="code-step-box">git init
+git add .
+git commit -m "Publicando Web Salsas SOFRE"
+git branch -M main
+git remote add origin https://github.com/TU-USUARIO/sofre-salsas.git
+git push -u origin main</div>
+          </div>
+
+          <div>
+            <h4 style="color: var(--accent-amber); margin-bottom: 6px;">2. Activar GitHub Pages & Pegar en Google Sites:</h4>
+            <p style="font-size: 0.9rem; color: var(--text-sub); line-height: 1.6;">
+              - Ve a los <strong>Settings > Pages</strong> de tu repositorio en GitHub y selecciona la rama <code>main</code>.<br>
+              - Obtendrás tu URL pública gratis (ej: <code>https://tu-usuario.github.io/sofre-salsas</code>).<br>
+              - En tu Google Sites, ve a <strong>Insertar > URL</strong>, pega ese enlace ¡y listo! Tu página interactiva con todos los desplegables se mostrará completa dentro de Google Sites.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container" style="text-align: center;">
+      <div class="logo-brand" style="justify-content: center; margin-bottom: 15px;">
+        <div class="logo-icon">!</div>
+        <span class="logo-title">SOFRE</span>
+      </div>
+      <p style="color: var(--text-muted); font-size: 0.95rem;">Una salsa para explorar sabores del mundo. Elaborado artesanalmente por Grupo Terfo de México en Tepatitlán, Jalisco.</p>
+      <p style="margin-top: 15px; color: var(--accent-amber); font-weight: bold;">📱 SÍGUENOS EN INSTAGRAM & TIKTOK: @salsa.mx | ✉️ terfodemexico@gmail.com</p>
+      <p style="margin-top: 20px; font-size: 0.8rem; color: var(--text-muted);">&copy; 2026 Salsas SOFRE. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

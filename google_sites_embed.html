@@ -1,0 +1,164 @@
+<!-- ==========================================================================
+   WIDGET AUTÓNOMO SALSA SOFRE PARA GOOGLE SITES (INSERTAR > CÓDIGO)
+   Copia y pega todo este código en Google Sites > Insertar > Código.
+   ========================================================================== -->
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&display=swap');
+  
+  .sofre-embed-wrap {
+    font-family: 'Outfit', sans-serif;
+    background: #0B0C10;
+    color: #FFFFFF;
+    border-radius: 20px;
+    padding: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.6);
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .sofre-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    padding-bottom: 15px;
+    margin-bottom: 25px;
+  }
+
+  .sofre-badge {
+    background: rgba(217, 4, 41, 0.2);
+    border: 1px solid #D90429;
+    color: #FF6B6B;
+    font-weight: 700;
+    font-size: 11px;
+    padding: 4px 12px;
+    border-radius: 50px;
+    text-transform: uppercase;
+  }
+
+  .sofre-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    align-items: center;
+  }
+
+  @media (max-width: 600px) {
+    .sofre-grid { grid-template-columns: 1fr; }
+  }
+
+  .sofre-card-box {
+    background: #15171E;
+    border-radius: 16px;
+    padding: 20px;
+    border: 1px solid rgba(255,255,255,0.05);
+    text-align: center;
+  }
+
+  .sofre-meter-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 0;
+    font-size: 13px;
+    font-weight: bold;
+  }
+
+  .sofre-dots {
+    display: flex;
+    gap: 4px;
+  }
+
+  .sofre-dot {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.15);
+  }
+
+  .sofre-dot.fire { background: #FF3B00; box-shadow: 0 0 6px #FF3B00; }
+  .sofre-dot.sweet { background: #FFB703; box-shadow: 0 0 6px #FFB703; }
+
+  .sofre-btn {
+    background: linear-gradient(135deg, #D90429, #FF4500);
+    color: #fff;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 50px;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 15px;
+    box-shadow: 0 8px 20px rgba(217,4,41,0.4);
+    transition: transform 0.2s;
+  }
+
+  .sofre-btn:hover {
+    transform: scale(1.04);
+  }
+
+  .sofre-recipe-box {
+    background: rgba(255,183,3,0.05);
+    border: 1px solid rgba(255,183,3,0.2);
+    border-radius: 12px;
+    padding: 15px;
+    margin-top: 15px;
+  }
+</style>
+
+<div class="sofre-embed-wrap">
+  <div class="sofre-header">
+    <div style="display:flex; align-items:center; gap:10px;">
+      <div style="background:#D90429; color:#fff; font-weight:900; width:32px; height:32px; border-radius:8px; display:flex; align-items:center; justify-content:center; font-size:18px;">!</div>
+      <span style="font-size:20px; font-weight:800; letter-spacing:1px;">SOFRE</span>
+    </div>
+    <span class="sofre-badge">🇲🇽 HECHO EN JALISCO</span>
+  </div>
+
+  <div class="sofre-grid">
+    <div>
+      <h2 style="font-size:26px; margin-bottom:10px; line-height:1.2;">Salsa de Chiles Mixtos</h2>
+      <p style="color:#A0AAB8; font-size:14px; margin-bottom:15px;">
+        Un toque para cada cocina del mundo. Ensamble artesanal de <strong>Chile de Árbol, Guajillo, Morita y Chipotle</strong>. Sin conservadores artificiales.
+      </p>
+
+      <div class="sofre-recipe-box">
+        <div style="color:#FFB703; font-weight:bold; font-size:13px;">👨‍🍳 Receta Sugerida:</div>
+        <div style="font-size:15px; font-weight:bold; margin:4px 0;">Pollo Marinado a la SOFRE</div>
+        <div style="font-size:12px; color:#C5CBD3;">Marinar pechugas de pollo con Salsa SOFRE, ajo picado y limón por 20 min antes de asar.</div>
+      </div>
+    </div>
+
+    <div class="sofre-card-box">
+      <div style="font-size:40px; margin-bottom:10px;">🌶️🫙</div>
+      <div style="font-weight:bold; font-size:16px;">SOFRE (280ml)</div>
+      
+      <div style="margin: 15px 0; background: rgba(0,0,0,0.4); padding: 12px; border-radius: 10px;">
+        <div class="sofre-meter-row">
+          <span>🔥 PICOR</span>
+          <div class="sofre-dots">
+            <div class="sofre-dot fire"></div>
+            <div class="sofre-dot fire"></div>
+            <div class="sofre-dot fire"></div>
+            <div class="sofre-dot fire"></div>
+            <div class="sofre-dot"></div>
+          </div>
+        </div>
+        <div class="sofre-meter-row">
+          <span>🍯 DULZURA</span>
+          <div class="sofre-dots">
+            <div class="sofre-dot sweet"></div>
+            <div class="sofre-dot sweet"></div>
+            <div class="sofre-dot"></div>
+            <div class="sofre-dot"></div>
+            <div class="sofre-dot"></div>
+          </div>
+        </div>
+      </div>
+
+      <a href="https://instagram.com/salsa.mx" target="_blank" class="sofre-btn">📲 Pedir / Contacto @salsa.mx</a>
+    </div>
+  </div>
+</div>
